@@ -154,7 +154,7 @@ def problem1a(m, n):
       -- If m is 30 and n is 100, the correct answer is about 1.278.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # done: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -170,7 +170,7 @@ def problem1a(m, n):
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # done: 4. Implement this TEST function.
     #   It TESTS the  problem1b  function defined below.
     #   Include at least **   4   ** tests.
     # ------------------------------------------------------------------
@@ -184,6 +184,25 @@ def run_test_problem1b():
     print('Testing the   problem1b   function:')
     print('--------------------------------------------------')
 
+    expected = 4
+    answer = problem1b(3, 4)
+    print('Test 1 Expected:', expected)
+    print('         answer:', answer)
+
+    expected = 5
+    answer = problem1b(3, 5)
+    print('Test 2 Expected:', expected)
+    print('         answer:', answer)
+
+    expected = 1
+    answer = problem1b(2, 1)
+    print('Test 3 Expected:', expected)
+    print('         answer:', answer)
+
+    expected = 44
+    answer = problem1b(5, 40)
+    print('Test 4 Expected:', expected)
+    print('         answer:', answer)
 
 def problem1b(m, f):
     """
@@ -202,7 +221,7 @@ def problem1b(m, f):
            since there are 44 primes between 5 and 200.
      """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # done: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     ####################################################################
@@ -215,7 +234,11 @@ def problem1b(m, f):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 to 15 minutes.
     # ------------------------------------------------------------------
-
+    count = 0
+    for k in range(m, (f * m) + 1):
+        if is_prime(k):
+            count = count + 1
+    return count
 
 def run_test_problem1c():
     """ Tests the   problem1c   function. """
@@ -313,8 +336,11 @@ def problem1c(n):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 20 minutes.
     # ------------------------------------------------------------------
-
-
+    total = 1
+    for k in range(n):
+        if is_prime(k+2):
+            total = total * sum_of_digits(k)
+    return total
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
