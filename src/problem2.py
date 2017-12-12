@@ -194,7 +194,12 @@ def problem2b(rect, n, delta, win):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 25 minutes.
     # ------------------------------------------------------------------
+    rect.attach_to(win)
 
+    for k in range(n):
+
+        rectangle = rg.Rectangle(k + (2* delta), k + (2* delta))
+        rectangle.attach_to(win)
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
